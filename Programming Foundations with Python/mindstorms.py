@@ -1,3 +1,4 @@
+#!/c/Python27/python
 import turtle
 
 def draw_square(length, t):

@@ -1,8 +1,11 @@
+#!/c/Python27/python
 import re
+from os.path import join
+from os import getcwd
 
 # Read text from a document
-def read_text():
-    quotes = open("C:/Users/User/Documents/Git/udacity/Programming Foundations with Python/movie_quotes.txt", "r")
+def read_text(filePath, fileName):
+    quotes = open(join(filePath, fileName), "r")
     contentsOfFile = quotes.read()
     quotes.close()
     
@@ -24,6 +27,7 @@ def get_word_list(lines):
     return wordList
 
 # Check for profanity
-
-fileContents = read_text()
-words = get_word_list(fileContents)
+fileContents = read_text(getcwd(), "movie_quotes.txt")
+profanity = read_text(getcwd(), "profanity.txt")
+messageWords = get_word_list(fileContents)
+curseWords = get_word_list(profanity)
