@@ -13,8 +13,9 @@ def draw_circle_of_squares(degreesToRotate, length, t):
 window = turtle.Screen()
 window.bgcolor("black")
 t = turtle.Turtle()
-t.hideturtle()
-t.speed(100)
+#t.hideturtle()
+t.shape("turtle")
+t.speed(200)
 t.pencolor("white")
 
 lineLength = 100
