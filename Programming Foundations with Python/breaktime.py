@@ -1,4 +1,5 @@
-#!/c/Python27/python
+#!/c/Users/User/Anaconda2/python
+
 import webbrowser
 import time
 import sys
