@@ -15,7 +15,6 @@ def clean_word(word):
     word = word.strip(",()-.").lower()
     regex = re.compile('[^a-z]')
     regex.sub('', word)
-    print word
     return word
 
 def get_word_list(lines):
@@ -31,3 +30,13 @@ fileContents = read_text(getcwd(), "movie_quotes.txt")
 profanity = read_text(getcwd(), "profanity.txt")
 messageWords = get_word_list(fileContents)
 curseWords = get_word_list(profanity)
+
+matches = set(curseWords) & set(messageWords)
+
+print "Found {0} curse words".format(len(matches))
+
+if (len(matches) > 0):
+    for match in matches:
+        print "Found the curse word '{0}' in the text.".format(match)
+else:
+    print "No curse words found."
