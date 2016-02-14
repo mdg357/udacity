@@ -36,7 +36,7 @@ if False:
 You can use index to select specific items from the Series
 '''
 # Change False to True to see Series indexing in action
-if False:
+if True:
     series = pd.Series(['Dave', 'Cheng-Han', 359, 9001],
                        index=['Instructor', 'Curriculum Manager',
                               'Course Number', 'Power Level'])
@@ -48,7 +48,7 @@ if False:
 You can also use boolean operators to select specific items from the Series
 '''
 # Change False to True to see boolean indexing in action
-if True:
+if False:
     cuteness = pd.Series([1, 2, 3, 4, 5], index=['Cockroach', 'Fish', 'Mini Pig',
                                                  'Puppy', 'Kitten'])
     print cuteness > 3
