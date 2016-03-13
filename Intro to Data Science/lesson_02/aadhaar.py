@@ -36,7 +36,18 @@ def select_first_50(filename):
     # You can download a copy of the aadhaar data that we are passing 
     # into this exercise below:
     # https://www.dropbox.com/s/vn8t4uulbsfmalo/aadhaar_data.csv
-    q = "SELECT registrar, enrolment_agency FROM aadhaar_data LIMIT 50"
+    #
+    # q = "SELECT registrar, enrolment_agency FROM aadhaar_data LIMIT 50"
+    
+    # Write a query that will select from the aadhaar_data table how many men and how 
+    # many women over the age of 50 have had aadhaar generated for them in each district.
+    # aadhaar_generated is a column in the Aadhaar Data that denotes the number who have had
+    # aadhaar generated in each row of the table.
+    #
+    q = """SELECT gender, district, sum(aadhaar_generated) 
+           FROM aadhaar_data
+           WHERE age > 50
+           GROUP BY gender, district;"""
 
     #Execute your SQL command against the pandas frame
     aadhaar_solution = pandasql.sqldf(q.lower(), locals())
